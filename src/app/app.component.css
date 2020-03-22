@@ -1,0 +1,25 @@
+
+router-outlet
+{
+    padding-left: 5% ;
+    padding-right: 5% ;
+
+}
+nav .row
+{
+    background-color: aquamarine;  
+    margin-right: unset !important;
+    margin-left: unset !important;
+
+}
+
+
+nav a{
+    text-decoration: none;
+    color: rgb(85, 85, 85);
+}
+nav a:hover {
+    background-color: yellow;
+  }
+
+ 
