@@ -6,9 +6,9 @@ const studentRoute = express.Router();
 // add the student model
 let Student = require('./schema');
 
-studentRoute.use(express.static(__dirname+'/dist/Project'));
+studentRoute.use(express.static('/project/dist/Project'));
 studentRoute.get('/show-list', function (req, res) {
-    res.sendFile(__dirname+'/dist/Project/index.html');
+    res.sendFile('/project/dist/Project/index.html');
 });
 
 /// Get list of students
