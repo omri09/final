@@ -9,7 +9,8 @@ let Student = require('./schema');
 /////////////// Define the routes/////////////
 
 studentRoute.route('/').get((req, res)=>{
-    res.redirect('/list');
+    console.log("omri");
+    res.status(200);
  });
 
 /// Get list of students
