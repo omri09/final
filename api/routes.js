@@ -10,8 +10,8 @@ let Student = require('./schema');
 
 studentRoute.route('/').get((req, res)=>{
     console.log("omri");
-    res.status(200);
- });
+    res.json("stud");            
+});
 
 /// Get list of students
 studentRoute.route('/list').get((req, res)=>{
