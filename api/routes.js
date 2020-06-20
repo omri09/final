@@ -3,15 +3,16 @@
 const express = require('express');
 // For using http.get, pot, put, delete in route
 const studentRoute = express.Router();
+const path = require('path');
+
 // add the student model
 let Student = require('./schema');
 
 /////////////// Define the routes/////////////
-
-studentRoute.route('/').get((req, res)=>{
-    console.log("omri");
-    res.json("stud");            
+studentRoute.route('').get((req, res)=>{
+res.sendFile(path.join(__dirname,  '../src/app/components/home/home.component.html'));
 });
+
 
 /// Get list of students
 studentRoute.route('/list').get((req, res)=>{
