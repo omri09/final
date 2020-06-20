@@ -8,6 +8,11 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('', studRoute);
 
+///////////////////////////////
+let port = process.env.PORT || 3000;
+app.listen(port, ()=>{
+    console.log('Listening to port');
+});
 
 // Connection string to MongoDB
 mongoose.connect('mongodb://localhost:27017/MyStudCrud').then(
@@ -16,9 +21,4 @@ mongoose.connect('mongodb://localhost:27017/MyStudCrud').then(
 );
 
 
-///////////////////////////////
-let port = process.env.PORT || 3000;
-app.listen(port, ()=>{
-    console.log('Listening to port');
-});
 
