@@ -6,10 +6,10 @@ const studentRoute = express.Router();
 // add the student model
 let Student = require('./schema');
 
-//const path= require('path');
 studentRoute.use(express.static(__dirname+'/dist/Project'));
-//studentRoute.route('/').get((req, res)=> res.sendFile(path.join(__dirname)));
-//studentRoute.route('/show-list').get((req, res)=> res.sendFile(path.join(__dirname)));
+studentRoute.get('/show-list', function (req, res) {
+    res.sendFile(__dirname+'/dist/Project/index.html');
+});
 
 /// Get list of students
 studentRoute.route('/list').get((req, res)=>{
@@ -65,6 +65,9 @@ studentRoute.route('/list/remove/:id').delete((req, res) => {
         if(err) res.json(err);
         else res.json('Deleted student successfuly!');
     });
+});
+studentRoute.get('/*', function (req, res) {
+    res.redirect('/');
 });
 
 module.exports = studentRoute;
