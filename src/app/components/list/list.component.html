@@ -1,0 +1,40 @@
+
+<div>
+<form [formGroup]="profileForm" (ngSubmit)="addStudentsMongo()">
+  
+    <label>
+      First Name:
+      <input type="text" formControlName="studName"  class="form-control" />
+    </label>
+  
+    <label>
+      Last Name:
+      <input type="text" formControlName="studFamily"  class="form-control" />
+    </label>
+    <button >Submit</button>
+</form>
+</div>
+
+    <div *ngFor="let student of list_mongo">
+        <p>{{student.studName }}</p>
+        <p>{{student.studFamily}}</p>
+        <p>{{student._id}}</p>
+        <button (click)="openUpdateBox=student._id">update Student</button>
+        <button (click)="deleteStudentsMongo(student._id)">delete Student</button>
+        <form *ngIf= "openUpdateBox==student._id" [formGroup]="updateForm" (ngSubmit)="updateStudentsMongo(student._id)">
+            <label>
+              First Name:
+              <input type="text" placeholder= "{{student.studName}}" formControlName="studName"  class="form-control" />
+            </label>
+          
+            <label>
+              Last Name:
+              <input type="text" placeholder="{{student.studFamily}}" formControlName="studFamily"  class="form-control" />
+            </label>
+            <button>Submit</button>
+        </form>
+        <br><br>
+      </div>
+
+
+

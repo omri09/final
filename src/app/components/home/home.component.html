@@ -1,1 +1,14 @@
-<span>home works!</span>
+<p style="text-align: right;">{{hello}}</p>
+<div *ngIf=!flag>
+<p>login</p>
+<input type="text"  #username >
+<br>
+<p>password</p>
+<input type="password" #password >
+<br><br>
+<button type="submit" (click)="local(username.value, password.value)" #submit>Login</button>
+</div>
+
+<div *ngIf=flag>
+<button  (click)="logout()" #submit>Log-Out</button>
+</div>
