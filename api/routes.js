@@ -7,6 +7,11 @@ const studentRoute = express.Router();
 let Student = require('./schema');
 
 /////////////// Define the routes/////////////
+
+studentRoute.route('/').get((req, res)=>{
+    res.redirect('/list');
+ });
+
 /// Get list of students
 studentRoute.route('/list').get((req, res)=>{
     //console.log(req);    
