@@ -6,14 +6,14 @@ const bodyParser = require('body-parser');
 const studRoute = require('./routes');
 app.use(cors());
 app.use(bodyParser.json());
-app.use('', studRoute);
+app.use(studRoute);
 
 
 // Connection string to MongoDB
-//mongoose.connect('mongodb://localhost:27017/MyStudCrud').then(
-//   () => {console.log('DB is connected!');},
-//    err => {console.log('Can not connect to DB' + err);}
-//);
+mongoose.connect('mongodb://localhost:27017/MyStudCrud').then(
+   () => {console.log('DB is connected!');},
+    err => {console.log('Can not connect to DB' + err);}
+);
 
 
 

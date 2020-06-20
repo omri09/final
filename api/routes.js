@@ -3,14 +3,13 @@
 const express = require('express');
 // For using http.get, pot, put, delete in route
 const studentRoute = express.Router();
-const path = require('path');
-
 // add the student model
 let Student = require('./schema');
 
-/////////////// Define the routes/////////////
-
-
+//const path= require('path');
+studentRoute.use(express.static(__dirname+'/dist/Project'));
+//studentRoute.route('/').get((req, res)=> res.sendFile(path.join(__dirname)));
+//studentRoute.route('/show-list').get((req, res)=> res.sendFile(path.join(__dirname)));
 
 /// Get list of students
 studentRoute.route('/list').get((req, res)=>{

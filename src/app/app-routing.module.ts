@@ -5,12 +5,12 @@ import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
-  { path: 'list', component: ListComponent },
+  { path: 'show-list', component: ListComponent },
   { path: '', component: HomeComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
