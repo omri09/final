@@ -9,9 +9,7 @@ const path = require('path');
 let Student = require('./schema');
 
 /////////////// Define the routes/////////////
-studentRoute.route('').get((req, res)=>{
-res.sendFile(path.join(__dirname,  '../src/app/components/home/home.component.html'));
-});
+
 
 
 /// Get list of students
