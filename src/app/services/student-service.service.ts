@@ -12,7 +12,7 @@ export class StudentServiceService {
 
   constructor(private http: HttpClient) {
     if(this.current_port=='4200')
-      this.mongo_url= 'http://localhost:3000/';
+      this.mongo_url= 'http://localhost:3000';
     else
       this.mongo_url= '';
   }
