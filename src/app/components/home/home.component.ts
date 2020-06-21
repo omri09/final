@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   hello: string;
-  flag: boolean;
+  connected: boolean;
   constructor() {
     //this.user = "user_placeholder_constructor";
   }
@@ -29,10 +29,10 @@ export class HomeComponent implements OnInit {
   }
   check(){
     if(localStorage.getItem('username')== null)
-    this.flag= false;
+    this.connected= false;
   else
   {
-  this.flag= true;
+  this.connected= true;
   this.hello= 'Hello '+ localStorage.getItem('username');
   }
   }

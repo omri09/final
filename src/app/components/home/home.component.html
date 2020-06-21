@@ -1,5 +1,4 @@
-<p style="text-align: right;">{{hello}}</p>
-<div *ngIf=!flag>
+<div *ngIf=!connected>
 <p>login</p>
 <input type="text"  #username >
 <br>
@@ -9,6 +8,7 @@
 <button type="submit" (click)="local(username.value, password.value)" #submit>Login</button>
 </div>
 
-<div *ngIf=flag>
+<div *ngIf=connected>
+<p>{{hello}}</p>
 <button  (click)="logout()" #submit>Log-Out</button>
 </div>

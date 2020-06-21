@@ -10,18 +10,19 @@ studentRoute.use(express.static(__dirname+'/dist/Project'));
 studentRoute.get('/show-list', function (req, res) {
     res.sendFile(__dirname+'/dist/Project/index.html');
 });
-
 /// Get list of students
 studentRoute.route('/list').get((req, res)=>{
-    //console.log(req);    
-    Student.find((err, stud)=>{
-        if (err) {
-            //console.log(err);
-        } else {
-            res.json(stud);            
-        }
-    });
+
+  Student.find((err, stud)=>{
+    if (err) {
+        console.log(err);
+    } else {
+        res.json(stud);            
+    }
+}).sort({ _id: -1 })
 });
+
+
 /// Get student by id
 studentRoute.route('/get/:id').get((req, res)=>{
     let id = req.params.id;
