@@ -6,11 +6,15 @@ import {HttpClient} from '@angular/common/http'
 })
 export class StudentServiceService {
 
+  private current_port = window.location.port;
   private mongo_url= '/list';
  
 
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    if(this.current_port=='4200')
+      this.mongo_url= 'http://localhost:3000/list';
+  
+  }
   
   getStudentsMongo()
   {
