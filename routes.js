@@ -32,7 +32,7 @@ studentRoute.route('/get/:id').get((req, res)=>{
 });
 
 /// Add student 
-studentRoute.route('/list/add').post(function(req, res){
+studentRoute.route('/add').post(function(req, res){
     // request to POST new object
     let student = new Student(req.body);
     student.save().then(stud => {
@@ -45,7 +45,7 @@ studentRoute.route('/list/add').post(function(req, res){
 });
 
 /// Update student by id - POST or PUT
-studentRoute.route('/list/update').put((req, res) => {
+studentRoute.route('/update').put((req, res) => {
    Student.findById(req.body.studId, (err, doc) => {
     if(err) res.json(err);
     else {
@@ -59,7 +59,7 @@ studentRoute.route('/list/update').put((req, res) => {
 
 
 /// Delete student by id
-studentRoute.route('/list/remove/:id').delete((req, res) => {
+studentRoute.route('/remove/:id').delete((req, res) => {
     // delete based on id from database
     Student.findByIdAndDelete({_id:req.params.id}, (err) => {
         if(err) res.json(err);

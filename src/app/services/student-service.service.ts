@@ -14,23 +14,23 @@ export class StudentServiceService {
     if(this.current_port=='4200')
       this.mongo_url= 'http://localhost:3000';
     else
-      this.mongo_url= '/';
+      this.mongo_url= '';
   }
   
   getStudentsMongo()
   {
-    return this.http.get(this.mongo_url+"list");
+    return this.http.get(this.mongo_url+"/list");
   }
   addStudentsMongo(StudName, StudFamilyName){
     const myNewStudentObj = {
       studName: StudName,
       studFamily : StudFamilyName
     }
-    return this.http.post(this.mongo_url+"add", myNewStudentObj);
+    return this.http.post(this.mongo_url+"/add", myNewStudentObj);
   }
   deleteStudentsMongo(id)
   {
-    return this.http.delete(this.mongo_url+"remove/"+id);
+    return this.http.delete(this.mongo_url+"/remove/"+id);
 
   }
   updateStudentsMongo(studId, StudName, StudFamilyName)
@@ -40,7 +40,7 @@ export class StudentServiceService {
       studName: StudName,
       studFamily : StudFamilyName
     }
-    return this.http.put(this.mongo_url+"update", myNewStudentObj);
+    return this.http.put(this.mongo_url+"/update", myNewStudentObj);
 
   }
 
