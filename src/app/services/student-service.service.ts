@@ -7,18 +7,19 @@ import {HttpClient} from '@angular/common/http'
 export class StudentServiceService {
 
   private current_port = window.location.port;
-  private mongo_url= '/list';
+  private mongo_url;
  
 
   constructor(private http: HttpClient) {
     if(this.current_port=='4200')
-      this.mongo_url= 'http://localhost:3000/list';
-  
+      this.mongo_url= 'http://localhost:3000/';
+    else
+      this.mongo_url= '';
   }
   
   getStudentsMongo()
   {
-    return this.http.get(this.mongo_url);
+    return this.http.get(this.mongo_url+"/list");
   }
   addStudentsMongo(StudName, StudFamilyName){
     const myNewStudentObj = {
