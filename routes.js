@@ -14,11 +14,11 @@ studentRoute.get('/show-list', function (req, res) {
 studentRoute.route('/list').get((req, res)=>{
 
   Student.find((err, stud)=>{
-    if (err) {
+    if (err) 
         console.log(err);
-    } else {
-        res.json(stud);            
-    }
+     else 
+        res.json(stud);  
+                  
 }).sort({ _id: -1 })
 });
 
