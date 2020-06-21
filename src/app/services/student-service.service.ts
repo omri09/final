@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http'
 })
 export class StudentServiceService {
 
-  private mongo_url= 'http://localhost:3000/list';
+  private mongo_url= '/list';
  
 
 
