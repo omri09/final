@@ -5,7 +5,7 @@
 <p>password</p>
 <input type="password" #password >
 <br><br>
-<button type="submit" (click)="local(username.value, password.value)" #submit>Login</button>
+<button type="submit" (click)="setCookie(username.value, password.value)" #submit>Login</button>
 </div>
 
 <div *ngIf=connected>
