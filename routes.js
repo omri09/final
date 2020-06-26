@@ -10,6 +10,9 @@ studentRoute.use(express.static(__dirname+'/dist/Project'));
 studentRoute.get('/show-list', function (req, res) {
     res.sendFile(__dirname+'/dist/Project/index.html');
 });
+studentRoute.get('/ecommerce-home', function (req, res) {
+    res.sendFile(__dirname+'/dist/Project/index.html');
+});
 /// Get list of students
 studentRoute.route('/list').get((req, res)=>{
 
