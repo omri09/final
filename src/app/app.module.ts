@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HomeComponent } from './components/home/home.component';
 import { EcommerceHomeComponent } from './components/ecommerce-home/ecommerce-home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -29,8 +30,8 @@ import { EcommerceHomeComponent } from './components/ecommerce-home/ecommerce-ho
     AppRoutingModule,
     LoadingBarRouterModule,
     ReactiveFormsModule,
-    FormsModule
- 
+    FormsModule,
+    BrowserAnimationsModule
     
   ],
   providers: [],
