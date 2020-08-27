@@ -1,0 +1,47 @@
+
+<style>
+  body {margin:0;}
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+  }
+  
+
+  li:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #3f51b5;
+  }
+  </style>
+<ul class="sub_modules" style="z-index: 1;">
+  <li [ngClass]="clicked === 0 ? 'active' : ''" (click)="select(0)"><a routerLink="">Home</a></li>
+  <li [ngClass]="clicked === 1 ? 'active' : ''" (click)="select(1)"><a routerLink="show-list">list</a></li>
+  
+</ul>
+
+
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

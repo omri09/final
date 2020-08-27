@@ -1,0 +1,14 @@
+<div style="margin-top: 30px;" *ngIf=!connected>
+<p>login</p>
+<input type="text"  #username >
+<br>
+<p>password</p>
+<input type="password" #password >
+<br><br>
+<button type="submit" (click)="setCookie(username.value, password.value)" #submit>Login</button>
+</div>
+
+<div style="margin-top: 30px;" *ngIf=connected>
+<p>{{hello}}</p>
+<button  (click)="logout()" #submit>Log-Out</button>
+</div>

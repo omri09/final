@@ -1,0 +1,49 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<form [formGroup]="profileForm" (ngSubmit)="addStudentsMongo()">
+  <div class="row align-items-center" style="margin-top: 50px; margin-bottom: 15px; padding: 15px 15px; background-color:lightgray;">
+  <div class="col-md-2">
+    <label>
+      First Name:
+      
+      <input type="text" formControlName="studName"  class="form-control" />
+    </label>
+  </div>
+  <div class="col-md-2">
+    <label>
+      Last Name:
+      
+      <input type="text" formControlName="studFamily"  class="form-control" />
+    </label>
+      </div>
+      <div class="col-md-2" >
+      <button style="padding:10px 25px;">Submit</button>
+    </div>
+</div>
+</form>
+
+
+    <div *ngFor="let student of list_mongo" style="padding: 15px 15px">
+        <p>{{student.studName }}</p>
+        <p>{{student.studFamily}}</p>
+        <p>{{student._id}}</p>
+        <button (click)="openUpdateBox=student._id">update Student</button>
+        <button (click)="deleteStudentsMongo(student._id)">delete Student</button>
+        <form *ngIf= "openUpdateBox==student._id" [formGroup]="updateForm" (ngSubmit)="updateStudentsMongo(student._id)">
+            <label>
+              First Name:
+              <input type="text" placeholder= "{{student.studName}}" formControlName="studName"  class="form-control" />
+            </label>
+          
+            <label>
+              Last Name:
+              <input type="text" placeholder="{{student.studFamily}}" formControlName="studFamily"  class="form-control" />
+            </label>
+            <button>Submit</button>
+        </form>
+        <br><br>
+      </div>
+
+
+
