@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  showNavigationArrows = true;
+  showNavigationIndicators = true;
+  images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);
+
+  constructor() {
+    // customize default values of carousels used by this component tree
+
+  }
   hello: string;
   connected: boolean;
-  constructor() {}
     //this.user = "user_placeholder_constructor";
   // }
    ngOnInit()

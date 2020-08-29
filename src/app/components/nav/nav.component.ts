@@ -11,6 +11,7 @@ import {ChangeDetectorRef, OnDestroy} from '@angular/core';
   
 })
 export class NavComponent {
+  public navbarCollapsed = true;
   clicked = -1;
   url;
   ngOnInit() {

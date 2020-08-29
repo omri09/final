@@ -1,47 +1,28 @@
 
-<style>
-  body {margin:0;}
-  
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 15px 16px;
-    text-decoration: none;
-  }
-  
-
-  li:hover:not(.active) {
-    background-color: #111;
-  }
-  
-  .active {
-    background-color: #3f51b5;
-  }
-  </style>
-<ul class="sub_modules" style="z-index: 3;">
-  <li [ngClass]="clicked === 0  ? 'active' : ''" (click)="select(0)"><a routerLink="">Home</a></li>
-  <li [ngClass]="clicked === 1  ? 'active' : ''" (click)="select(1)"><a routerLink="show-list">list</a></li>
-  
-</ul>
-
-
-
-<!-- Copyright 2020 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->
+    <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <button class="navbar-toggler" type="button" (click)="navbarCollapsed = !navbarCollapsed" [attr.aria-expanded]="!navbarCollapsed" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngbCollapse]="navbarCollapsed" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="show-list">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="show-list">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="show-list">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

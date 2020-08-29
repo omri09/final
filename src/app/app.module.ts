@@ -18,6 +18,7 @@ import {DemoMaterialModule} from './material-module';
 import {MatNativeDateModule} from '@angular/material/core';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -39,6 +40,8 @@ import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
     BrowserAnimationsModule,
     DemoMaterialModule,
   MatNativeDateModule,
+  NgbModule
+
     
   ],
   providers: [],
