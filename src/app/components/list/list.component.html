@@ -26,6 +26,38 @@
 
 <div class="container" >
     <div *ngFor="let student of list_mongo">
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{student.studName }}</a>
+              </h4>
+              <h5>{{student.studFamily}}</h5>
+              <p class="card-text">{{student._id}}</p>
+            </div>
+            <div class="card-footer">
+              <button (click)="openUpdateBox=student._id">update Student</button>
+        <button (click)="deleteStudentsMongo(student._id)">delete Student</button>
+        <form *ngIf= "openUpdateBox==student._id" [formGroup]="updateForm" (ngSubmit)="updateStudentsMongo(student._id)">
+            <label>
+              First Name:
+              <input type="text" placeholder= "{{student.studName}}" formControlName="studName"  class="form-control" />
+            </label>
+          
+            <label>
+              Last Name:
+              <input type="text" placeholder="{{student.studFamily}}" formControlName="studFamily"  class="form-control" />
+            </label>
+            <button>Submit</button>
+        </form>
+        <br>
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+          </div>
+        </div>
+        <!--
         <p>{{student.studName }}</p>
         <p>{{student.studFamily}}</p>
         <p>{{student._id}}</p>
@@ -42,8 +74,9 @@
               <input type="text" placeholder="{{student.studFamily}}" formControlName="studFamily"  class="form-control" />
             </label>
             <button>Submit</button>
+            
         </form>
-        <br><br>
+        -->
       </div>
     </div>
 
