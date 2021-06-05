@@ -10,7 +10,7 @@ app.use(studRoute);
 
 
 // Connection string to MongoDB
-mongoose.connect('mongodb://omri:On987987@ds125680.mlab.com:25680/heroku_922g5vcm').then(
+mongoose.connect('mongodb+srv://omri:987987@cluster0.rrpys.mongodb.net/omri-db?retryWrites=true&w=majority').then(
    () => {console.log('DB is connected!');},
     err => {console.log('Can not connect to DB' + err);}
 );
